@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>AngularJS-Directive-Communication - Example 3</title>
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container" style="padding-top: 20px;">
+
+	<section ng-app="App" ng-controller="ModelCtrl">
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><span class="label label-success">Directive Group 1</span> Panel 1</div>
+			<div class="panel-body">
+				<section ng-init="model.subsectionaA = {}">
+					<span class="label label-success">Directive 1</span><simple-form model="model.subsectionaA"></simple-form>
+					<span class="label label-success">Directive 2</span><simple-list model="model.subsectionaA"></simple-list>
+				</section>
+			</div>
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><span class="label label-info">Directive Group 2</span> Panel 2</div>
+			<div class="panel-body">
+				<section ng-init="model.subsectionaB = {}">
+					<span class="label label-info">Directive 3</span><simple-form model="model.subsectionaB"></simple-form>
+					<span class="label label-info">Directive 4</span><simple-list model="model.subsectionaB"></simple-list>
+				</section>
+			</div>
+		</div>
+
+		<h1>Current model:</h1>
+		<pre>{{model | json}}</pre>
+	</section>
+</div>
+
+
+<script src="../bower_components/angularjs/angular.min.js"></script>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
